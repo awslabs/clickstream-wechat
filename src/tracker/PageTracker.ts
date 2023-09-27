@@ -128,6 +128,10 @@ export class PageTracker extends BaseTracker {
 						[ReservedAttribute.PREVIOUS_SCREEN_ID]: lastPage.id,
 						[ReservedAttribute.PREVIOUS_SCREEN_ROUTE]: lastPage.route,
 						[ReservedAttribute.PREVIOUS_SCREEN_NAME]: lastPage.name,
+						[ReservedAttribute.ENGAGEMENT_TIMESTAMP]:
+							lastPage.timestamp > 0
+								? new Date().getTime() - lastPage.timestamp
+								: undefined,
 					},
 				});
 

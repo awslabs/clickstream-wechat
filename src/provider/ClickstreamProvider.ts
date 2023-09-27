@@ -61,7 +61,7 @@ export class ClickstreamProvider {
 			endpoint: '',
 			sendMode: SendMode.Immediate,
 			sendEventsInterval: 5000,
-			autoTrackAppShow: true,
+			autoTrackAppStart: true,
 			autoTrackAppEnd: true,
 			autoTrackPageShow: true,
 			autoTrackUserEngagement: true,

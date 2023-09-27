@@ -10,6 +10,7 @@
  *  OR CONDITIONS OF ANY KIND, express or implied. See the License for the specific language governing permissions
  *  and limitations under the License.
  */
+
 import { UserAttributes } from './UserInfo';
 
 export interface ClickstreamConfiguration {
@@ -37,7 +38,7 @@ export interface ClickstreamConfiguration {
 	/**
 	 * Whether auto record event for App onShow(), auto track is enabled by default
 	 */
-	autoTrackAppShow?: boolean;
+	autoTrackAppStart?: boolean;
 
 	/**
 	 * Whether auto record event for App onHide(), auto track is enabled by default

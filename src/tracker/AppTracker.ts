@@ -92,7 +92,7 @@ export class AppTracker extends BaseTracker {
 		}
 
 		// Send _app_start event
-		this.provider.config.autoTrackAppShow &&
+		this.provider.config.autoTrackAppStart &&
 			this.provider.eventRecorder.sendEvent({
 				name: PresetEvent.APP_START,
 				attributes: {
