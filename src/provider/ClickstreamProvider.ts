@@ -33,7 +33,7 @@ import { StorageKeys, StorageUtil } from '../utils/StorageUtil';
 import { EventError, EventValidator } from '../utils/Validator';
 
 export const UNKNOWN = 'Unknown';
-export const NotAvailable = 'N/a';
+export const NotApplicable = 'N/A';
 
 const DEFAULT_USER_INFO = {
 	unique_id: wx_uuid(),

@@ -12,16 +12,16 @@
  */
 
 import { BaseTracker } from './BaseTracker';
-import { NotAvailable } from '../provider/ClickstreamProvider';
+import { NotApplicable } from '../provider/ClickstreamProvider';
 import { PresetEvent, ReservedAttribute } from '../provider/Event';
 import { PageInfo } from '../types/PageInfo';
 import { objectToQueryString, wx_getPageTitle } from '../utils/helper';
 import { StorageKeys, StorageUtil } from '../utils/StorageUtil';
 
 export const DEFAULT_PAGE_INFO: PageInfo = {
-	id: NotAvailable,
-	route: NotAvailable,
-	name: NotAvailable,
+	id: NotApplicable,
+	route: NotApplicable,
+	name: NotApplicable,
 	timestamp: 0,
 };
 
@@ -137,7 +137,7 @@ export class PageTracker extends BaseTracker {
 
 			// Send _user_engagement event if last viewed page engagement was not recorded upon
 			// App onHide() event (pageId is available while timestamp is not 0)
-			if (lastPage.id !== NotAvailable && lastPage.timestamp > 0) {
+			if (lastPage.id !== NotApplicable && lastPage.timestamp > 0) {
 				this.provider.config.autoTrackUserEngagement &&
 					this.provider.eventRecorder.sendEvent({
 						name: PresetEvent.USER_ENGAGEMENT,

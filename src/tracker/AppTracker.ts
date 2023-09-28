@@ -12,7 +12,7 @@
  */
 
 import { BaseTracker } from './BaseTracker';
-import { NotAvailable } from '../provider/ClickstreamProvider';
+import { NotApplicable } from '../provider/ClickstreamProvider';
 import { PresetEvent, ReservedAttribute } from '../provider/Event';
 import { PageInfo } from '../types/PageInfo';
 import { StorageKeys, StorageUtil } from '../utils/StorageUtil';
@@ -121,7 +121,7 @@ export class AppTracker extends BaseTracker {
 		if (lastViewedPageStr !== '') {
 			const lastPage = JSON.parse(lastViewedPageStr) as PageInfo;
 
-			if (lastPage.id !== NotAvailable && lastPage.timestamp !== 0) {
+			if (lastPage.id !== NotApplicable && lastPage.timestamp !== 0) {
 				// Send _user_engagement event
 				this.provider.config.autoTrackUserEngagement &&
 					this.provider.eventRecorder.sendEvent({
