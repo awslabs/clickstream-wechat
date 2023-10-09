@@ -1,0 +1,10 @@
+.DS_Store
+.idea/
+*.iml
+.vscode
+node_modules
+/dist
+/lib
+/coverage
+/src/config.ts
+

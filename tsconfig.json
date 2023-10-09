@@ -1,0 +1,33 @@
+{
+  "compilerOptions": {
+    "module": "ESNext",
+    "esModuleInterop": true,
+    "noImplicitAny": true,
+    "lib": [
+      "esnext"
+    ],
+    "downlevelIteration": true,
+    "target": "es5",
+    "moduleResolution": "node",
+    "declaration": true,
+    "noEmitOnError": false,
+    "incremental": true,
+    "importHelpers": true,
+    "baseUrl": ".",
+    "outDir": "lib",
+    "resolveJsonModule": true,
+    "types": [
+      "jest",
+      "miniprogram-api-typings"
+    ],
+    "paths": {
+      "fs": ["node_modules/@types/node/fs"]
+    }
+  },
+  "include": [
+    "src"
+  ],
+  "exclude": [
+    "node_modules"
+  ]
+}
