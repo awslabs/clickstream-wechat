@@ -78,14 +78,6 @@ export class PageTracker extends BaseTracker {
 	 * @private
 	 */
 	private onPageShow(): void {
-		if (this.provider.deviceAppInfo.network_type) {
-			this.onPageShowActions();
-		} else {
-			// Wait for wx.getNetworkType() completed
-			setTimeout(() => this.onPageShowActions(), 500);
-		}
-	}
-	private onPageShowActions(): void {
 		const pages = getCurrentPages();
 		const page = pages[pages.length - 1];
 		const pageId = page.getPageId();

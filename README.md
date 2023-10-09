@@ -24,29 +24,31 @@ ClickstreamAnalytics.init({
 
 In addition to the required configuration `appId` and `endpoint`, there are optional configuration properties used for customizing the SDK.
 
-| Property Name          | Required | Default Value | Description                                                  |
-|------------------------| :------: |---------------| ------------------------------------------------------------ |
-| appId                  |   yes    | -             | appId of the project in Clickstream Analytics control plane  |
-| endpoint               |   yes    | -             | the ingestion server endpoint                                |
-| sendMode               |    no    | *Immediate*   | options: *Immediate*, *Batch*                                |
-| sendEventsInterval     |    no    | 5000          | interval (in milliseconds) of sending events, only works for batch send mode |
-| autoTrackAppStart      |    no    | true          | whether auto record app view event                           |
-| autoTrackAppEnd        |    no    | true          | whether auto record app hide event                           |
-| autoTrackPageShow      |    no    | true          | whether auto record page view event                          |
-| autoTrackUserEngagement |    no    | true          | whether auto record user engagement                          |
-| autoTrackMPShare       |    no    | false         | whether auto record when user shares mini program            |
-| autoTrackMPFavorite    |    no    | false         | whether auto record when user adds mini program to favorites |
-| debug                  |    no    | false         | whether print out logs in the console                        |
-| authCookie             |    no    | -             | auth cookie for AWS application load balancer auth           |
-| sessionTimeoutDuration |    no    | 1800000       | session timeout duration in millisecond                      |
+| Property Name          | Required | Default Value        | Description                                                                  |
+|------------------------| :------: |----------------------|------------------------------------------------------------------------------|
+| appId                  |   yes    | -                    | appId of the project in Clickstream Analytics control plane                  |
+| endpoint               |   yes    | -                    | the ingestion server endpoint                                                |
+| sendMode               |    no    | *SendMode.Immediate* | options: *SendMode.Immediate*, *SendMode.Batch*                              |
+| sendEventsInterval     |    no    | 5000                 | interval (in milliseconds) of sending events, only works for batch send mode |
+| autoTrackAppStart      |    no    | true                 | whether auto record app view event                                           |
+| autoTrackAppEnd        |    no    | true                 | whether auto record app hide event                                           |
+| autoTrackPageShow      |    no    | true                 | whether auto record page view event                                          |
+| autoTrackUserEngagement |    no    | true                 | whether auto record user engagement                                          |
+| autoTrackMPShare       |    no    | false                | whether auto record when user shares mini program                            |
+| autoTrackMPFavorite    |    no    | false                | whether auto record when user adds mini program to favorites                 |
+| debug                  |    no    | false                | whether print out logs in the console                                        |
+| authCookie             |    no    | -                    | auth cookie for AWS application load balancer auth                           |
+| sessionTimeoutDuration |    no    | 1800000              | session timeout duration in millisecond                                      |
 
 The SDK configurations can be updated after initialization by calling `configure()` method
 
 ```typescript
+import { ClickstreamAnalytics, SendMode } from './clickstream-wechat';
+
 ClickstreamAnalytics.configure({
     appId: 'your appId',
     endpoint: 'https://example.com/collect',
-    sendMode: 'Batch',
+    sendMode: SendMode.Batch,
     debug: true,
     authCookie: 'auth cookie',
     autoTrackPageShow: false

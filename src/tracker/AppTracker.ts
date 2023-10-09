@@ -60,15 +60,6 @@ export class AppTracker extends BaseTracker {
 	 * @private
 	 */
 	private onAppShow(): void {
-		if (this.provider.deviceAppInfo.network_type) {
-			this.onAppShowActions();
-		} else {
-			// Wait for wx.getNetworkType() completed
-			setTimeout(() => this.onAppShowActions(), 500);
-		}
-	}
-
-	private onAppShowActions(): void {
 		// Update sessionInfo
 		const isNewSession = this.provider.session.resume();
 

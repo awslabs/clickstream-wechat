@@ -33,7 +33,7 @@ import { StorageKeys, StorageUtil } from '../utils/StorageUtil';
 import { EventError, EventValidator } from '../utils/Validator';
 
 export const UNKNOWN = 'Unknown';
-export const NotApplicable = 'N/A';
+export const NotApplicable = 'NOT_APPLICABLE';
 
 const DEFAULT_USER_INFO = {
 	unique_id: wx_uuid(),
@@ -339,6 +339,7 @@ export class ClickstreamProvider {
 	private getDeviceAppInfo(): DeviceAppInfo {
 		const deviceAppInfo: DeviceAppInfo = {
 			device_id: StorageUtil.getDeviceId(),
+			network_type: UNKNOWN,
 		};
 
 		try {
