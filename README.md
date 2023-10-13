@@ -2,13 +2,15 @@
 
 ## Introduction
 
-Clickstream WeChat Mini Program SDK is part of [Clickstream Analytics on AWS](https://github.com/awslabs/clickstream-analytics-on-aws), it helps WeChat Mini Program (WMP) owner collect user events on WMP easily. The SDK leverages WeChat Mini Program framework and APIs. We designed well architected events recording and publish mechanism to ensure the efficiency and reliability of the SDK. With events being recorded, AWS Clickstream solution can generate statistics and analysis of specific scenario data. We provide numerous preset commonly used event statistics for Clickstream solution users.
+Clickstream WeChat Miniprogram SDK is part of [Clickstream Analytics on AWS](https://github.com/awslabs/clickstream-analytics-on-aws), it helps WeChat Mini Program (WMP) owner collect user events on WMP easily. The SDK leverages WeChat Mini Program framework and APIs. We designed well architected events recording and publish mechanism to ensure the efficiency and reliability of the SDK. With events being recorded, AWS Clickstream solution can generate statistics and analysis of specific scenario data. We provide numerous preset commonly used event statistics for Clickstream solution users.
+
+Visit our [Documentation site](https://awslabs.github.io/clickstream-analytics-on-aws/en/sdk-manual/wechat/) to learn more about Clickstream WeChat Miniprogram SDK.
 
 ## Usage Guidance
 
 ### Import the SDK
 
-Download SDK bundled *.js* file and add it to the WeChat Mini Program project.
+Download SDK *clickstream-wechat.min.js* file from Github [repository](https://github.com/awslabs/clickstream-wechat/releases) and add it to the WeChat Mini Program project.
 
 ### Initialize the SDK
 The SDK should be initialized with necessary configurations before it can work with Clickstream Analytics solution. Take TypeScript mini program project for example, add following code snippet in the *app.ts* file **BEFORE** default `App()` method and fill in `appId` and `endpoint` values, which can be got from Clickstream web console after registering the app to a Clickstream Analytics data pipeline.

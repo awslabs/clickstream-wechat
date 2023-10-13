@@ -45,7 +45,7 @@
     "src"
   ],
   "engines": {
-    "node": ">=16.19.0"
+    "node": ">=18.18.1"
   },
   "dependencies": {
     "crypto-js": "^4.1.1",
