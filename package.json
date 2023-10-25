@@ -48,7 +48,7 @@
     "node": ">=18.18.1"
   },
   "dependencies": {
-    "crypto-js": "^4.1.1",
+    "crypto-js": "^4.2.0",
     "tslib": "^2.6.2"
   }
 }
