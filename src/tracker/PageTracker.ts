@@ -114,11 +114,11 @@ export class PageTracker extends BaseTracker {
 				this.provider.eventRecorder.sendEvent({
 					name: PresetEvent.SCREEN_VIEW,
 					attributes: {
-						[ReservedAttribute.SCREEN_ID]: pageId,
-						[ReservedAttribute.SCREEN_ROUTE]: pageRoute,
+						[ReservedAttribute.SCREEN_UNIQUE_ID]: pageId,
+						[ReservedAttribute.SCREEN_ID]: pageRoute,
 						[ReservedAttribute.SCREEN_NAME]: pageTitle,
-						[ReservedAttribute.PREVIOUS_SCREEN_ID]: lastPage.id,
-						[ReservedAttribute.PREVIOUS_SCREEN_ROUTE]: lastPage.route,
+						[ReservedAttribute.PREVIOUS_SCREEN_UNIQUE_ID]: lastPage.id,
+						[ReservedAttribute.PREVIOUS_SCREEN_ID]: lastPage.route,
 						[ReservedAttribute.PREVIOUS_SCREEN_NAME]: lastPage.name,
 						[ReservedAttribute.ENGAGEMENT_TIMESTAMP]:
 							lastPage.timestamp > 0
@@ -134,13 +134,13 @@ export class PageTracker extends BaseTracker {
 					this.provider.eventRecorder.sendEvent({
 						name: PresetEvent.USER_ENGAGEMENT,
 						attributes: {
-							[ReservedAttribute.SCREEN_ID]: lastPage.id,
-							[ReservedAttribute.SCREEN_ROUTE]: lastPage.route,
+							[ReservedAttribute.SCREEN_UNIQUE_ID]: lastPage.id,
+							[ReservedAttribute.SCREEN_ID]: lastPage.route,
 							[ReservedAttribute.SCREEN_NAME]: lastPage.name,
 							[ReservedAttribute.ENGAGEMENT_TIMESTAMP]:
 								new Date().getTime() - lastPage.timestamp,
+							[ReservedAttribute.PREVIOUS_SCREEN_UNIQUE_ID]: undefined,
 							[ReservedAttribute.PREVIOUS_SCREEN_ID]: undefined,
-							[ReservedAttribute.PREVIOUS_SCREEN_ROUTE]: undefined,
 							[ReservedAttribute.PREVIOUS_SCREEN_NAME]: undefined,
 						},
 					});

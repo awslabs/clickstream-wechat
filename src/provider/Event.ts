@@ -59,11 +59,11 @@ export const ReservedAttribute = {
 	SESSION_NUMBER: '_session_number',
 
 	// Page
+	SCREEN_UNIQUE_ID: '_screen_unique_id',
 	SCREEN_ID: '_screen_id',
-	SCREEN_ROUTE: '_screen_route',
 	SCREEN_NAME: '_screen_name',
+	PREVIOUS_SCREEN_UNIQUE_ID: '_previous_screen_unique_id',
 	PREVIOUS_SCREEN_ID: '_previous_screen_id',
-	PREVIOUS_SCREEN_ROUTE: '_previous_screen_route',
 	PREVIOUS_SCREEN_NAME: '_previous_screen_name',
 
 	// Other

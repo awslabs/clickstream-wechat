@@ -395,15 +395,11 @@ export class ClickstreamProvider {
 
 		const pages = getCurrentPages();
 		const currentPage = pages.length > 0 ? pages[pages.length - 1] : null;
-		const previousPage = pages.length > 1 ? pages[pages.length - 2] : null;
 		const screenAttributes: ClickstreamAttributes = {
-			[ReservedAttribute.SCREEN_ID]: currentPage ? currentPage.getPageId() : '',
-			[ReservedAttribute.SCREEN_ROUTE]: this.getPageRoute(currentPage),
-			[ReservedAttribute.PREVIOUS_SCREEN_ID]: previousPage
-				? previousPage.getPageId()
+			[ReservedAttribute.SCREEN_UNIQUE_ID]: currentPage
+				? currentPage.getPageId()
 				: '',
-			[ReservedAttribute.PREVIOUS_SCREEN_ROUTE]:
-				this.getPageRoute(previousPage),
+			[ReservedAttribute.SCREEN_ID]: this.getPageRoute(currentPage),
 		};
 
 		return {
