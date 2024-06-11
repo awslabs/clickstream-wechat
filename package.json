@@ -1,6 +1,6 @@
 {
   "name": "@aws/clickstream-wechat",
-  "version": "v0.1.1",
+  "version": "0.1.0",
   "description": "Wechat Miniprogram SDK for Clickstream Analytics on AWS",
   "main": "index.ts",
   "scripts": {
