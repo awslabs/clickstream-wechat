@@ -19,6 +19,7 @@ import { StorageKeys, StorageUtil } from '../utils/StorageUtil';
 
 export class AppTracker extends BaseTracker {
 	isFirstTime = true;
+	lastShowTime = 0;
 
 	init() {
 		const originalApp: WechatMiniprogram.App.Constructor = App;
@@ -60,6 +61,11 @@ export class AppTracker extends BaseTracker {
 	 * @private
 	 */
 	private onAppShow(): void {
+		const currentTime = new Date().getTime();
+		if (currentTime - this.lastShowTime < 100) {
+			return;
+		}
+		this.lastShowTime = currentTime;
 		// Update sessionInfo
 		const isNewSession = this.provider.session.resume();
 
