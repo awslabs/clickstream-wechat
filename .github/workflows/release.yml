@@ -8,6 +8,9 @@ on:
         type: string
 env:
   NEW_VERSION: ${{ github.event.inputs.release_tag }}
+permissions:
+  contents: write
+
 jobs:
   release:
     runs-on: ubuntu-latest
